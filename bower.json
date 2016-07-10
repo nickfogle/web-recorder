@@ -5,7 +5,7 @@
   "main": "src/WebAudioRecorder.min.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nickfogle/web-audio-recorder-js"
+    "url": "https://github.com/nickfogle/web-recorder"
   },
   "author": "Nick Fogle",
   "license": "MIT"
