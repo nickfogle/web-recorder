@@ -2,7 +2,7 @@
   "name": "web-recorder",
   "version": "1.0.0",
   "description": "A web audio recorder with MP3 support. Forked from github.com/higuma/web-audio-recorder-js.",
-  "main": "src/WebAudioRecorder.min.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/nickfogle/web-recorder"
