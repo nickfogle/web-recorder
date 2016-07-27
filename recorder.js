@@ -39,7 +39,7 @@ angular.module('wavveRecorder', [])
     };
 
     var startRecording = function() {
-       recorder.setOptions({timeLimit: 20, progressInterval: 1000, bufferSize: 1024, mp3: { bitRate: 160 }});
+       recorder.setOptions({timeLimit: 60, progressInterval: 1000, bufferSize: 1024, mp3: { bitRate: 160 }});
        recorder.startRecording();
     };
 
