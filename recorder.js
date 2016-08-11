@@ -5,7 +5,9 @@ angular.module('wavveRecorder', [])
   .factory('MP3Service', function($window, $http, Auth, $rootScope) {
 
     navigator.getUserMedia = ($window.navigator.getUserMedia || $window.navigator.webkitGetUserMedia || $window.navigator.mozGetUserMedia || $window.navigator.msGetUserMedia);
-
+    if (navigator.getUserMedia === null) {
+      console.log('not supported browser');
+    }
     URL = window.URL || window.webkitURL;
 
     var audioContext = new AudioContext;
