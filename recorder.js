@@ -13,7 +13,6 @@ angular.module('wavveRecorder', [])
     if (contextClass) {
       console.log('Web Audio API is available.');
       var audioContext = new contextClass();
-      var audioContext = new AudioContext;
       var audioInLevel = audioContext.createGain();
       audioInLevel.gain.value = 0.5;
       var audioIn = void 0;
