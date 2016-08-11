@@ -6,12 +6,12 @@ angular.module('wavveRecorder', [])
 
     navigator.getUserMedia = ($window.navigator.getUserMedia || $window.navigator.webkitGetUserMedia || $window.navigator.mozGetUserMedia || $window.navigator.msGetUserMedia);
 
-    URL = window.URL || window.webkitURL;
+    URL = $window.URL || $window.webkitURL;
 
-    var contextClass = (window.AudioContext || window.webkitAudioContext || window.mozAudioContext || window.oAudioContext || window.msAudioContext);
+    var contextClass = ($window.AudioContext || $window.webkitAudioContext || $window.mozAudioContext || $window.oAudioContext || $window.msAudioContext);
 
     if (contextClass) {
-      console.log('Web Audio API is available.');
+      // Make sure Web Audio API is available
       var audioContext = new contextClass();
       var audioInLevel = audioContext.createGain();
       audioInLevel.gain.value = 0.5;
@@ -67,7 +67,7 @@ angular.module('wavveRecorder', [])
       var updateDateTime = function() {
         var sec = recorder.recordingTime() | 0;
         $('#time-display').html("" + (minSecStr(sec / 60 | 0)) + ":" + (minSecStr(sec % 60)));
-        // GET NASTY JQUERY OUT OF HERE ^^^
+        // Remove jQuery logic
       };
 
       var loadRecorder = function() {
@@ -83,12 +83,9 @@ angular.module('wavveRecorder', [])
           console.log('getUserMedia not supported on your browser!');
         }
         startRecording();
-        window.setInterval(updateDateTime, 200);
+        $window.setInterval(updateDateTime, 200);
       };
 
-
-    } else {
-      console.log('nope.')
     }
 
     return {
